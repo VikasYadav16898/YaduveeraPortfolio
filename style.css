@@ -11,7 +11,7 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 body {
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 h1,
@@ -426,7 +426,7 @@ svg {
 /* media Querries */
 @media (max-width: 968px) {
   .page {
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
   }
   .section {
     width: 100%;

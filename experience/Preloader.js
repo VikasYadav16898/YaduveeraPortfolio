@@ -110,7 +110,7 @@ export default class Preloader extends EventEmitter {
           {
             yPercent: 100,
             stagger: 0.05,
-            ease: "back.in(1.7)",
+            ease: "back.in(0.2)",
           },
           "same"
         )
@@ -324,7 +324,19 @@ export default class Preloader extends EventEmitter {
   }
 
   async playIntro() {
+    // let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    // let scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+    // window.onscroll = function () {
+    //   window.scrollTo(scrollLeft, scrollTop);
+    // };
+
+    window.document.body.style.height = "100vh";
+    window.document.body.style.overflowY = "hidden";
+
     await this.firstIntro();
+
+    window.onscroll = function () {};
     this.moveFlag = true;
     this.scrollOnceEvent = this.onScroll.bind(this);
     this.touchStart = this.onTouch.bind(this);
